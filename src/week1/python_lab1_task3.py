@@ -31,13 +31,14 @@ Examples (these are also used to check your work):
 
 
 def analyze_sentence(text: str) -> tuple[int, int, bool]:
-    """Return (length, word count, contains 'python') for the given text."""
-    # TODO: implement function logic
-    raise NotImplementedError("analyze_sentence() is not implemented yet")
+    return len(text), len(text.split()), "python" in text.lower()
 
 
 if __name__ == "__main__":
-    # Keep all input() calls inside this block, otherwise the autograder
-    # cannot import your file.
-    # TODO: read sentence from input, call function, and print results
-    pass
+    input_text = str(input())
+
+    char_count, word_count, contains_python = analyze_sentence(input_text)
+
+    print(f"Characters: {char_count}")
+    print(f"Words: {word_count}")
+    print(f"Contains 'Python': {contains_python}")
